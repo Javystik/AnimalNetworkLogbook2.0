@@ -1,16 +1,16 @@
 
 …
-java:S1192³"bDefine a constant instead of duplicating this literal "Ð—Ð½Ð°Ð¹Ð´ÐµÐ½Ð½Ñ– Ð·Ð°Ð¿Ð¸Ñ‚Ð¸: " 3 times.(¶ùÆÛþÿÿÿÿ8¿°ý±Ö1
+java:S1192“"bDefine a constant instead of duplicating this literal "Ð—Ð½Ð°Ð¹Ð´ÐµÐ½Ð½Ñ– Ð·Ð°Ð¿Ð¸Ñ‚Ð¸: " 3 times.(¶ùÆÛþÿÿÿÿ8¿°ý±Ö1
 m
-java:S1192—"ODefine a constant instead of duplicating this literal "\033[H\033[2J" 12 times.(Îœò—8À°ý±Ö1
-D	java:S131ž""Add a default case to this switch.(­Ö¹§úÿÿÿÿ8ñ±ý±Ö1
+java:S1192÷"ODefine a constant instead of duplicating this literal "\033[H\033[2J" 12 times.(Îœò—8À°ý±Ö1
+D	java:S131Þ""Add a default case to this switch.(­Ö¹§úÿÿÿÿ8ñ±ý±Ö1
 m
-java:S6201ð"PReplace this instanceof check and cast with 'instanceof String selectedUserName'(Ýè‹:8û±ý±Ö1
+java:S6201Ã"PReplace this instanceof check and cast with 'instanceof String selectedUserName'(Ýè‹:8û±ý±Ö1
 `
-java:S6201ö"BReplace this instanceof check and cast with 'instanceof User user'(´Úí‰8ý±ý±Ö1
+java:S6201É"BReplace this instanceof check and cast with 'instanceof User user'(´Úí‰8ý±ý±Ö1
 p
-java:S3776’"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(¥¨™Î8‚²ý±Ö1
+java:S3776ò"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(¥¨™Î8‚²ý±Ö1
 a
-java:S1117ç">Rename "activeUser" which hides the field declared at line 22.(ÐÉÜ‡øÿÿÿÿ8Œ²ý±Ö1
+java:S1117Ç">Rename "activeUser" which hides the field declared at line 33.(ÐÉÜ‡øÿÿÿÿ8Œ²ý±Ö1
 ä
-java:S6541’"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 90 to 64, Complexity from 18 to 14, Nesting Level from 3 to 2, Number of Variables from 16 to 6.(¥¨™Î8—²ý±Ö1
+java:S6541ò"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 90 to 64, Complexity from 18 to 14, Nesting Level from 3 to 2, Number of Variables from 16 to 6.(¥¨™Î8—²ý±Ö1

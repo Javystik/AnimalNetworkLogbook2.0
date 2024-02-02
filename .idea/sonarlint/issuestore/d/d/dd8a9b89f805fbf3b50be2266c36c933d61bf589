@@ -1,23 +1,23 @@
 
 F
-java:S5411’"(Use a primitive boolean expression here.(Õ±«Ÿ8Ñ·´ªÖ1
+java:S5411…"(Use a primitive boolean expression here.(Õ±«Ÿ8›…½Ö1
 F
-java:S5411•"(Use a primitive boolean expression here.(ÃÍ·8Ò·´ªÖ1
+java:S5411ˆ"(Use a primitive boolean expression here.(ÃÍ·8›…½Ö1
 K
-java:S5411¦"(Use a primitive boolean expression here.( ÄÛÈüÿÿÿÿ8Ò·´ªÖ1
+java:S5411¥"(Use a primitive boolean expression here.( ÄÛÈüÿÿÿÿ8›…½Ö1
 F
-java:S5411©"(Use a primitive boolean expression here.(Û‘Ö8Ò·´ªÖ1
+java:S5411¨"(Use a primitive boolean expression here.(Û‘Ö8›…½Ö1
 K
-java:S5411³"(Use a primitive boolean expression here.(š›•—ûÿÿÿÿ8Ò·´ªÖ1
+java:S5411¸"(Use a primitive boolean expression here.(š›•—ûÿÿÿÿ8›…½Ö1
 K
-java:S5411¶"(Use a primitive boolean expression here.(ôÎıµùÿÿÿÿ8Ò·´ªÖ1
+java:S5411»"(Use a primitive boolean expression here.(ôÎıµùÿÿÿÿ8›…½Ö1
 K
-java:S5411¾"(Use a primitive boolean expression here.(Üñ¬—şÿÿÿÿ8Ó·´ªÖ1
-o
-java:S6204g"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8Š¸´ªÖ1
-o
-java:S6204z"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8­¸´ªÖ1
+java:S5411É"(Use a primitive boolean expression here.(Üñ¬—şÿÿÿÿ8›…½Ö1
 p
-java:S6204ƒ"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ÂùµªÖ1
+java:S6204¥"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ì›…½Ö1
 p
-java:S6204ˆ"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8»¡ºªÖ1
+java:S6204Í"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ô›…½Ö1
+p
+java:S6204ã"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ş›…½Ö1
+p
+java:S6204ï"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8‚œ…½Ö1

@@ -1,75 +1,123 @@
+/**
+ * The AnimalView class provides methods for interacting with the user through the console
+ * for managing animal-related operations.
+ */
 package com.zoi4erom.animalnetworkbook.aui;
 
-import static com.zoi4erom.animalnetworkbook.aui.AnimalView.AnimalMenu.*;
-import static java.lang.System.out;
-
+import de.codeshelf.consoleui.prompt.*;
 import com.zoi4erom.animalnetworkbook.businesslogic.AnimalService;
 import com.zoi4erom.animalnetworkbook.businesslogic.ShelterService;
 import com.zoi4erom.animalnetworkbook.persistence.entity.Animal;
 import com.zoi4erom.animalnetworkbook.persistence.entity.Shelter;
 import com.zoi4erom.animalnetworkbook.persistence.entity.User;
-import de.codeshelf.consoleui.prompt.ConsolePrompt;
-import de.codeshelf.consoleui.prompt.InputResult;
-import de.codeshelf.consoleui.prompt.ListResult;
+
 import de.codeshelf.consoleui.prompt.builder.ListPromptBuilder;
 import de.codeshelf.consoleui.prompt.builder.PromptBuilder;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
-public class AnimalView implements Renderable{
+import static com.zoi4erom.animalnetworkbook.aui.AnimalView.AnimalMenu.*;
+import static java.lang.System.out;
+
+/**
+ * The AnimalView class implements Renderable and is responsible for rendering animal-related views
+ * and collecting user input.
+ */
+public class AnimalView implements Renderable {
+
 	private User activeUser;
+
+	/**
+	 * Constructor for the AnimalView class.
+	 *
+	 * @param activeUser The user currently interacting with the system.
+	 */
 	public AnimalView(User activeUser) {
 		this.activeUser = activeUser;
 	}
+
+	/**
+	 * Collects the name of an animal from the user through the console prompt.
+	 *
+	 * @return The name of the animal entered by the user.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static String animalName() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("animalName")
-		    .message("Впишіть ім'я тварини: ")
+		    .message("Enter the animal's name: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
 		var animalNameInput = (InputResult) result.get("animalName");
 		return animalNameInput.getInput();
 	}
+
+	/**
+	 * Collects the species of an animal from the user through the console prompt.
+	 *
+	 * @return The species of the animal entered by the user.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static String animalSpecies() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("animalSpecies")
-		    .message("Впишіть вид тварини: ")
+		    .message("Enter the animal's species: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
 		var speciesInput = (InputResult) result.get("animalSpecies");
 		return speciesInput.getInput();
 	}
+
+	/**
+	 * Collects the breed of an animal from the user through the console prompt.
+	 *
+	 * @return The breed of the animal entered by the user.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static String animalBreed() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("animalBreed")
-		    .message("Впишіть породу тварини: ")
+		    .message("Enter the animal's breed: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
 		var breedInput = (InputResult) result.get("animalBreed");
 		return breedInput.getInput();
 	}
+
+	/**
+	 * Collects the age of an animal from the user through the console prompt.
+	 *
+	 * @return The age of the animal entered by the user.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static int animalAge() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("animalAge")
-		    .message("Впишіть вік тварини: ")
+		    .message("Enter the animal's age: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
 		var ageInput = (InputResult) result.get("animalAge");
 		return Integer.parseInt(ageInput.getInput());
 	}
+	/**
+	 * Displays a list of available shelters and prompts the user to select one by entering its number.
+	 *
+	 * @return The selected shelter or null if the user cancels or an error occurs.
+	 * @throws IOException If an I/O error occurs during the input process.
+	 */
 	public static Shelter selectShelterFromList() throws IOException {
 		List<Shelter> allShelters = ShelterService.getAllShelters();
 
@@ -115,6 +163,13 @@ public class AnimalView implements Renderable{
 		}
 		return null;
 	}
+	/**
+	 * Gets the selected shelter based on the given list of shelters and the selected identifier.
+	 *
+	 * @param allShelters List of all available shelters.
+	 * @param selectedId  Selected identifier for the shelter.
+	 * @return Selected shelter or null if not found.
+	 */
 	private static Shelter getSelectedShelter(List<Shelter> allShelters, Object selectedId) {
 		if (selectedId instanceof String) {
 			String selectedShelterName = (String) selectedId;
@@ -128,6 +183,12 @@ public class AnimalView implements Renderable{
 			return null;
 		}
 	}
+	/**
+	 * Gets a unique identifier for an animal.
+	 *
+	 * @return Unique identifier for the animal.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static UUID animalId() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -140,6 +201,12 @@ public class AnimalView implements Renderable{
 		var idInput = (InputResult) result.get("animalId");
 		return UUID.fromString(idInput.getInput());
 	}
+	/**
+	 * Edits the details of a selected animal.
+	 *
+	 * @param selectedAnimal The selected animal for editing.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	private void editAnimal(Animal selectedAnimal) throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -202,6 +269,12 @@ public class AnimalView implements Renderable{
 
 		System.out.println("\nЗмінена тварина:\n " + selectedAnimal);
 	}
+	/**
+	 * Selects a shelter from the list of available shelters.
+	 *
+	 * @return Selected shelter or null if none is selected.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	private Animal selectAnimalFromList() throws IOException {
 		List<Animal> allAnimals = AnimalService.getAllAnimals();
 
@@ -248,6 +321,14 @@ public class AnimalView implements Renderable{
 		}
 		return null;
 	}
+
+	/**
+	 * Gets the selected animal based on the given list of animals and the selected text.
+	 *
+	 * @param allAnimals           List of all available animals.
+	 * @param selectedAnimalText  Selected text representing the animal.
+	 * @return Selected animal or null if not found.
+	 */
 	private static Animal getSelectedAnimal(List<Animal> allAnimals, String selectedAnimalText) {
 		if (selectedAnimalText != null) {
 			for (Animal animal : allAnimals) {
@@ -260,6 +341,12 @@ public class AnimalView implements Renderable{
 		}
 		return null;
 	}
+	/**
+	 * Processes the selected menu item from the main menu.
+	 *
+	 * @param selectedItem The selected menu item.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	private void process(AnimalMenu selectedItem) throws IOException {
 		switch (selectedItem) {
 			case VIEW_ALL_ANIMAL -> {
@@ -326,6 +413,12 @@ public class AnimalView implements Renderable{
 			}
 		}
 	}
+	/**
+	 * Processes the selected menu item from the search menu.
+	 *
+	 * @param selectedItem The selected menu item.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	private void processSearch(AnimalMenu selectedItem) throws IOException {
 		switch (selectedItem) {
 			case FIND_BY_ANIMAL_BY_NAME -> {
@@ -400,6 +493,11 @@ public class AnimalView implements Renderable{
 			}
 		}
 	}
+	/**
+	 * Displays the main menu for animal-related operations and processes the user's selection.
+	 *
+	 * @throws IOException If an I/O error occurs.
+	 */
 	@Override
 	public void render() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
@@ -435,6 +533,11 @@ public class AnimalView implements Renderable{
 
 		System.out.print("\033[H\033[2J");
 	}
+	/**
+	 * Displays the search menu for animal-related operations and processes the user's search selection.
+	 *
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public void renderSearch() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -464,7 +567,10 @@ public class AnimalView implements Renderable{
 
 		System.out.print("\033[H\033[2J");
 	}
-	enum AnimalMenu {
+	/**
+	 * Represents different menu options for animal-related operations.
+	 */
+	public enum AnimalMenu {
 		VIEW_ALL_ANIMAL("Перегляд всіх тварин"),
 		FIND_ANIMAL("Меню пошуку тварин"),
 		ADD_ANIMAL("Додати тварину"),
@@ -476,10 +582,26 @@ public class AnimalView implements Renderable{
 		FIND_BY_BREED("Пошук за породою"),
 		FIND_BY_AGE("Пошук за роками"),
 		FIND_BY_SHELTER("Пошук за приютом");
+
+		/**
+		 * The display name of the menu option.
+		 */
 		private final String name;
+
+		/**
+		 * Constructs a menu option with a given display name.
+		 *
+		 * @param name The display name of the menu option.
+		 */
 		AnimalMenu(String name) {
 			this.name = name;
 		}
+
+		/**
+		 * Gets the display name of the menu option.
+		 *
+		 * @return The display name of the menu option.
+		 */
 		public String getName() {
 			return name;
 		}

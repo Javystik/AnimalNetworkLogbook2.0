@@ -17,12 +17,37 @@ import de.codeshelf.consoleui.prompt.builder.ListPromptBuilder;
 import de.codeshelf.consoleui.prompt.builder.PromptBuilder;
 import java.io.IOException;
 import java.util.List;
-
+/**
+ * The {@code RequestView} class provides a user interface for managing requests related to animals.
+ * It allows users to view, add, find by status, edit, and find requests by animal or user.
+ * The class implements the {@code Renderable} interface for rendering in a UI context.
+ *
+ * @author Zoi4erom
+ */
 public class RequestView implements Renderable{
+	/**
+	 * Constructs a new {@code UserView} with the specified active user.
+	 *
+	 * @param activeUser The user interacting with the user view.
+	 */
 	private User activeUser;
+	/**
+	 * Constructs a new {@code RequestView} instance with the specified active user.
+	 * The active user is the user currently interacting with the request view.
+	 * This constructor is used to initialize the active user when creating a new instance of the {@code RequestView}.
+	 *
+	 * @param activeUser The user currently interacting with the request view.
+	 * @since 1.0
+	 */
 	public RequestView(User activeUser) {
 		this.activeUser = activeUser;
 	}
+	/**
+	 * Prompts the user to enter a name for a new request.
+	 *
+	 * @return The name entered by the user.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static String requestName() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -35,6 +60,12 @@ public class RequestView implements Renderable{
 		var productNameInput = (InputResult) result.get("shelterName");
 		return productNameInput.getInput();
 	}
+	/**
+	 * Allows the user to select an animal from a list.
+	 *
+	 * @return The selected {@code Animal} object or {@code null} if no animal is selected.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static Animal selectAnimalFromList() throws IOException {
 		List<Animal> allAnimals = AnimalService.getAllAnimals();
 
@@ -77,6 +108,19 @@ public class RequestView implements Renderable{
 		System.out.println("Вибір тварини скасовано або виникла помилка.");
 		return null;
 	}
+	/**
+	 * Renders the main menu for request management, allowing users to perform various operations.
+	 * Overrides the {@code render} method in the {@code Renderable} interface.
+	 *
+	 * @throws IOException If an I/O error occurs.
+	 */
+	/**
+	 * Retrieves the selected animal from the provided list of animals based on the formatted text.
+	 *
+	 * @param allAnimals        The list of all available animals.
+	 * @param selectedAnimalText The formatted text representing the selected animal.
+	 * @return The selected animal, or null if not found.
+	 */
 	private static Animal getSelectedAnimal(List<Animal> allAnimals, String selectedAnimalText) {
 		String[] parts = selectedAnimalText.split("\\(");
 		if (parts.length > 0) {
@@ -88,6 +132,12 @@ public class RequestView implements Renderable{
 		}
 		return null;
 	}
+	/**
+	 * Allows the user to select a request from the list of all available requests.
+	 *
+	 * @return The selected request, or null if no requests are available or the selection is canceled.
+	 * @throws IOException If an I/O error occurs during user interaction.
+	 */
 	private Request selectRequestFromList() throws IOException {
 		List<Request> allRequests = RequestService.getAllRequests();
 
@@ -127,6 +177,13 @@ public class RequestView implements Renderable{
 		}
 		return null;
 	}
+	/**
+	 * Retrieves the selected request from the provided list of requests based on the formatted text.
+	 *
+	 * @param allRequests          The list of all available requests.
+	 * @param selectedRequestText The formatted text representing the selected request.
+	 * @return The selected request, or null if not found.
+	 */
 	private static Request getSelectedRequest(List<Request> allRequests, String selectedRequestText) {
 		for (Request request : allRequests) {
 			if (request.toString().equals(selectedRequestText)) {
@@ -135,6 +192,13 @@ public class RequestView implements Renderable{
 		}
 		return null;
 	}
+	/**
+	 * Allows the user to edit a selected request by providing options for different modifications.
+	 *
+	 * @param selectedRequest The request to be edited.
+	 * @return The edited request after modifications.
+	 * @throws IOException If an I/O error occurs during user interaction.
+	 */
 	private Request editRequest(Request selectedRequest) throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -178,6 +242,12 @@ public class RequestView implements Renderable{
 
 		return selectedRequest;
 	}
+	/**
+	 * Prompts the user to enter a new name through the console.
+	 *
+	 * @return The new name entered by the user.
+	 * @throws IOException If an I/O error occurs during user interaction.
+	 */
 	private String promptForNewName() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -192,6 +262,12 @@ public class RequestView implements Renderable{
 
 		return inputResult.getInput();
 	}
+	/**
+	 * Allows the user to select a user from the list of all available users.
+	 *
+	 * @return The selected user, or null if no users are available or the selection is canceled.
+	 * @throws IOException If an I/O error occurs during user interaction.
+	 */
 	public static User selectUserFromList() throws IOException {
 		List<User> allUsers = UserService.getAllUsers();
 
@@ -236,6 +312,13 @@ public class RequestView implements Renderable{
 		}
 		return null;
 	}
+	/**
+	 * Retrieves the selected user from the provided list of users based on the selected identifier.
+	 *
+	 * @param allUsers    The list of all available users.
+	 * @param selectedId The selected identifier, which can be either a username (String) or a User object.
+	 * @return The selected user, or null if not found.
+	 */
 	private static User getSelectedUser(List<User> allUsers, Object selectedId) {
 		if (selectedId instanceof String) {
 			String selectedUserName = (String) selectedId;
@@ -249,6 +332,13 @@ public class RequestView implements Renderable{
 			return null;
 		}
 	}
+	/**
+	 * Prompts the user to select a request status from a list of options.
+	 * Uses ConsolePrompt for interaction and returns the selected RequestStatus.
+	 *
+	 * @return The selected RequestStatus, or RequestStatus.PENDING if no selection is made.
+	 * @throws IOException If an I/O error occurs during the prompt.
+	 */
 	public static RequestStatus promptForRequestStatus() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -271,6 +361,12 @@ public class RequestView implements Renderable{
 			return RequestStatus.PENDING;
 		}
 	}
+	/**
+	 * Processes the user's selection from the RequestMenu, performing corresponding actions.
+	 *
+	 * @param selectedItem The selected action from the RequestMenu enum.
+	 * @throws IOException If an I/O error occurs during processing.
+	 */
 	private void process(RequestMenu selectedItem) throws IOException {
 		switch (selectedItem) {
 			case VIEW_ALL_REQUEST -> {
@@ -362,6 +458,12 @@ public class RequestView implements Renderable{
 			}
 		}
 	}
+	/**
+	 * Displays the main menu for monitoring requests, prompts the user for a selection,
+	 * and processes the chosen action.
+	 *
+	 * @throws IOException If an I/O error occurs during rendering or processing.
+	 */
 	@Override
 	public void render() throws IOException {
 
@@ -399,6 +501,9 @@ public class RequestView implements Renderable{
 
 		System.out.print("\033[H\033[2J");
 	}
+	/**
+	 * Enum representing various actions in the request menu.
+	 */
 	enum RequestMenu {
 		VIEW_ALL_REQUEST("Перегляд всіх запитів"),
 		ADD_REQUEST("Додати запит"),
@@ -408,9 +513,19 @@ public class RequestView implements Renderable{
 		FIND_BY_USER("Пошук запиту за юзером"),
 		BACK("Повернутись назад");
 		private final String name;
+		/**
+		 * Constructor for RequestMenu enum.
+		 *
+		 * @param name The display name of the menu item.
+		 */
 		RequestMenu(String name) {
 			this.name = name;
 		}
+		/**
+		 * Returns the display name of the menu item.
+		 *
+		 * @return The display name of the menu item.
+		 */
 		public String getName() {
 			return name;
 		}

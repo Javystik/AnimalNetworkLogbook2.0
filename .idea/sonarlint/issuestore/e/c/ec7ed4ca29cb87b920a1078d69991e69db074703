@@ -1,16 +1,16 @@
 
 |
-java:S1192Ï"^Define a constant instead of duplicating this literal "ĞŸÑ€Ğ¸ÑÑ‚ Ğ·Ğ½Ğ°Ğ¹Ğ´ĞµĞ½Ğ¾: " 4 times.(¤ã³˜8›ñ‚µÖ1
+java:S1192­"^Define a constant instead of duplicating this literal "ĞŸÑ€Ğ¸ÑÑ‚ Ğ·Ğ½Ğ°Ğ¹Ğ´ĞµĞ½Ğ¾: " 4 times.(¤ã³˜8›ñ‚µÖ1
 m
-java:S1192È"ODefine a constant instead of duplicating this literal "\033[H\033[2J" 17 times.(Îœò—8›ñ‚µÖ1
+java:S1192”"ODefine a constant instead of duplicating this literal "\033[H\033[2J" 17 times.(Îœò—8›ñ‚µÖ1
 p
-java:S6201"SReplace this instanceof check and cast with 'instanceof String selectedShelterName'(İè‹:8¥‘”µÖ1
-D	java:S131¬""Add a default case to this switch.(­Ö¹§úÿÿÿÿ8„ó‚µÖ1
+java:S6201Ì"SReplace this instanceof check and cast with 'instanceof String selectedShelterName'(İè‹:8İ˜Ú½Ö1
+D	java:S131ò""Add a default case to this switch.(­Ö¹§úÿÿÿÿ8ä˜Ú½Ö1
 u
-java:S3776Å"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¸ÒãÚşÿÿÿÿ8‰ó‚µÖ1
-v	java:S131Æ"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8‹ó‚µÖ1
+java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¸ÒãÚşÿÿÿÿ8è˜Ú½Ö1
+v	java:S131’"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8ê˜Ú½Ö1
 a
-java:S1117„">Rename "activeUser" which hides the field declared at line 19.(ĞÉÜ‡øÿÿÿÿ8’ó‚µÖ1
+java:S1117Ğ">Rename "activeUser" which hides the field declared at line 30.(ĞÉÜ‡øÿÿÿÿ8ó˜Ú½Ö1
 p
-java:S3776È"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¾¯ú8¥ó‚µÖ1
-v	java:S131É"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8¦ó‚µÖ1
+java:S3776¦"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¾¯ú8‡™Ú½Ö1
+v	java:S131§"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8ˆ™Ú½Ö1

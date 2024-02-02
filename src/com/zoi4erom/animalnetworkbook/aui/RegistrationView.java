@@ -10,13 +10,24 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 
-public class RegistrationView{
+/**
+ * Represents the registration view for user registration in the application.
+ */
+public class RegistrationView {
+
 	private RegistrationView() {
 	}
+
+	/**
+	 * Processes the user registration.
+	 *
+	 * @throws IOException If an I/O error occurs during the registration process.
+	 */
 	public static void process() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 
+		// Build input prompts for user registration
 		promptBuilder.createInputPrompt()
 		    .name("fullName")
 		    .message("Впишіть ваш ПІБ: ")
@@ -43,7 +54,7 @@ public class RegistrationView{
 		    .message("Впишіть дату народження(в форматі YYYY-MM-DD): ")
 		    .addPrompt();
 
-
+		// Prompt the user for registration details
 		var userResult = prompt.prompt(promptBuilder.build());
 
 		var fullNameInput = ((InputResult) userResult.get("fullName"));
@@ -56,8 +67,10 @@ public class RegistrationView{
 		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 		try {
+			// Parse the birthday input
 			LocalDate birthday = LocalDate.parse(birthdayInput.getInput(), dateFormatter);
 
+			// Perform registration validation
 			List<String> errors = RegistrationService.registrationValidation(
 			    fullNameInput.getInput(),
 			    passwordInput.getInput(),
@@ -66,6 +79,7 @@ public class RegistrationView{
 			    addressInput.getInput(),
 			    birthday);
 
+			// Display the registration result
 			if (errors.isEmpty()) {
 				System.out.println("Успішна реєстрація!");
 			} else {
@@ -80,11 +94,11 @@ public class RegistrationView{
 			AuthenticationAndRegistrationView authenticationAndRegistrationView
 			    = new AuthenticationAndRegistrationView();
 			authenticationAndRegistrationView.render();
-		} catch (NullPointerException e){
+		} catch (NullPointerException e) {
 			System.out.println("Поле з датою народження, не може бути пусте!");
 			System.out.println("Повторіть спробу");
 			AuthenticationAndRegistrationView authenticationAndRegistrationView
-			   = new AuthenticationAndRegistrationView();
+			    = new AuthenticationAndRegistrationView();
 			authenticationAndRegistrationView.render();
 		}
 	}

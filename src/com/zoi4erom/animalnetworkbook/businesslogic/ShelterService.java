@@ -11,10 +11,25 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
+/**
+ * Provides functionality related to animal shelters.
+ */
 public class ShelterService {
+
 	private static final List<String> errors = new ArrayList<>();
+
 	private ShelterService() {
 	}
+
+	/**
+	 * Validates and creates a new animal shelter.
+	 *
+	 * @param name              the name of the shelter
+	 * @param address           the address of the shelter
+	 * @param phone             the phone number of the shelter
+	 * @param capacityOfAnimals the capacity of animals that the shelter can accommodate
+	 * @return a list of validation errors or an empty list if validation is successful
+	 */
 	public static List<String> createShelterValidation(String name, String address, String phone, int capacityOfAnimals) {
 		errors.clear();
 
@@ -31,6 +46,15 @@ public class ShelterService {
 
 		return errors;
 	}
+
+	/**
+	 * Creates a new animal shelter and stores it in the shelter list.
+	 *
+	 * @param name              the name of the shelter
+	 * @param address           the address of the shelter
+	 * @param phone             the phone number of the shelter
+	 * @param capacityOfAnimals the capacity of animals that the shelter can accommodate
+	 */
 	private static void createShelter(String name, String address, String phone, int capacityOfAnimals) {
 		List<Shelter> shelters = shelters();
 
@@ -39,14 +63,21 @@ public class ShelterService {
 		shelters.add(shelter);
 		JsonConverter.serialization(shelters, JsonPaths.SHELTERS);
 	}
+
+	/**
+	 * Deletes an animal shelter by its name.
+	 *
+	 * @param name the name of the shelter to delete
+	 * @return true if the shelter is successfully deleted, false otherwise
+	 */
 	public static Boolean deleteShelterByName(String name) {
 		List<Shelter> shelters = shelters();
 		List<Animal> animals = AnimalService.getAllAnimals();
 
-		for (Shelter shelter: shelters){
-			if(Objects.equals(shelter.getName(), name)){
-				for (Animal animal: animals){
-					if(Objects.equals(animal.getShelter().getName(), name)){
+		for (Shelter shelter : shelters) {
+			if (Objects.equals(shelter.getName(), name)) {
+				for (Animal animal : animals) {
+					if (Objects.equals(animal.getShelter().getName(), name)) {
 						return false;
 					}
 				}
@@ -59,6 +90,12 @@ public class ShelterService {
 
 		return true;
 	}
+
+	/**
+	 * Updates an existing animal shelter.
+	 *
+	 * @param updatedShelter the updated shelter
+	 */
 	public static void updateShelter(Shelter updatedShelter) {
 		List<Shelter> allShelters = shelters();
 
@@ -69,12 +106,25 @@ public class ShelterService {
 		JsonConverter.serialization(allShelters, JsonPaths.SHELTERS);
 	}
 
+	/**
+	 * Retrieves an animal shelter by its ID.
+	 *
+	 * @param shelterId the ID of the shelter to retrieve
+	 * @return the shelter with the specified ID, or null if not found
+	 */
 	public static Shelter getShelterById(UUID shelterId) {
 		return shelters().stream()
 		    .filter(shelter -> shelter.getId().equals(shelterId))
 		    .findFirst()
 		    .orElse(null);
 	}
+
+	/**
+	 * Finds an animal shelter by its name.
+	 *
+	 * @param name the name of the shelter to find
+	 * @return the shelter with the specified name, or null if not found
+	 */
 	public static Shelter findShelterByName(String name) {
 		List<Shelter> shelters = shelters();
 
@@ -83,6 +133,13 @@ public class ShelterService {
 		    .findFirst()
 		    .orElse(null);
 	}
+
+	/**
+	 * Finds an animal shelter by its maximum capacity of animals.
+	 *
+	 * @param maxAnimals the maximum capacity of animals of the shelter to find
+	 * @return the shelter with the specified maximum capacity of animals, or null if not found
+	 */
 	public static Shelter findShelterByMaxAnimals(int maxAnimals) {
 		List<Shelter> shelters = shelters();
 
@@ -91,6 +148,13 @@ public class ShelterService {
 		    .findFirst()
 		    .orElse(null);
 	}
+
+	/**
+	 * Finds an animal shelter by its phone number.
+	 *
+	 * @param phoneNumber the phone number of the shelter to find
+	 * @return the shelter with the specified phone number, or null if not found
+	 */
 	public static Shelter findShelterByPhoneNumber(String phoneNumber) {
 		List<Shelter> shelters = shelters();
 
@@ -99,6 +163,13 @@ public class ShelterService {
 		    .findFirst()
 		    .orElse(null);
 	}
+
+	/**
+	 * Finds an animal shelter by its address.
+	 *
+	 * @param address the address of the shelter to find
+	 * @return the shelter with the specified address, or null if not found
+	 */
 	public static Shelter findShelterByAddress(String address) {
 		List<Shelter> shelters = shelters();
 
@@ -107,6 +178,12 @@ public class ShelterService {
 		    .findFirst()
 		    .orElse(null);
 	}
+
+	/**
+	 * Retrieves a list of all animal shelters.
+	 *
+	 * @return a list of all animal shelters
+	 */
 	public static List<Shelter> getAllShelters() {
 		List<Shelter> allShelters = shelters();
 
@@ -116,9 +193,21 @@ public class ShelterService {
 
 		return allShelters;
 	}
-	static List<Shelter> shelters(){
+
+	/**
+	 * Retrieves a list of all animal shelters.
+	 *
+	 * @return a list of all animal shelters
+	 */
+	static List<Shelter> shelters() {
 		return JsonConverter.deserialization(JsonPaths.SHELTERS, Shelter.class);
 	}
+
+	/**
+	 * Validates the name of the animal shelter.
+	 *
+	 * @param name the name to validate
+	 */
 	private static void isValidName(String name) {
 		final String FIELD_NAME = "назви притулку";
 		final int MIN_SIZE = 3;
@@ -137,6 +226,12 @@ public class ShelterService {
 			errors.add("Приют з таким іменем вже існує.");
 		}
 	}
+
+	/**
+	 * Validates the address of the animal shelter.
+	 *
+	 * @param address the address to validate
+	 */
 	private static void isValidAddress(String address) {
 		final String FIELD_ADDRESS = "адреси притулку";
 		final int MIN_SIZE = 5;
@@ -150,6 +245,12 @@ public class ShelterService {
 			    .formatted(FIELD_ADDRESS, MIN_SIZE, MAX_SIZE));
 		}
 	}
+
+	/**
+	 * Validates the phone number of the animal shelter.
+	 *
+	 * @param phone the phone number to validate
+	 */
 	private static void isValidPhone(String phone) {
 		final String FIELD_PHONE = "телефону притулку";
 		final int MIN_SIZE = 7;
@@ -163,6 +264,12 @@ public class ShelterService {
 			    .formatted(FIELD_PHONE, MIN_SIZE, MAX_SIZE));
 		}
 	}
+
+	/**
+	 * Validates the capacity of animals that the animal shelter can accommodate.
+	 *
+	 * @param capacityOfAnimals the capacity of animals to validate
+	 */
 	private static void isValidCapacityOfAnimals(int capacityOfAnimals) {
 		final String FIELD_CAPACITY = "кількості тварин, яку може вмістити притулок";
 		final int MIN_CAPACITY = 1;

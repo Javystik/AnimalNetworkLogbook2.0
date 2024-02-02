@@ -9,6 +9,7 @@ import com.google.gson.reflect.TypeToken;
 import com.zoi4erom.animalnetworkbook.persistence.entity.Entity;
 import com.zoi4erom.animalnetworkbook.persistence.exception.DeserializationException;
 import com.zoi4erom.animalnetworkbook.persistence.exception.SerializationException;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -21,9 +22,20 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utility class for converting objects to and from JSON format.
+ */
 public final class JsonConverter {
 	private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
-	public static void serialization(List<? extends Entity> entities, JsonPaths jsonPaths) {
+
+	/**
+	 * Serializes a list of entities to a JSON file.
+	 *
+	 * @param entities   The list of entities to serialize.
+	 * @param jsonPaths  The paths to the JSON file.
+	 * @param <T>        The type of entities.
+	 */
+	public static <T extends Entity> void serialization(List<T> entities, JsonPaths jsonPaths) {
 		Type entityType = new TypeToken<List<Entity>>() {}.getType();
 
 		try {
@@ -42,9 +54,18 @@ public final class JsonConverter {
 				gson.toJson(entities, entityType, writer);
 			}
 		} catch (IOException e) {
-			throw new SerializationException("Помилка при записі в файл: " + e.getMessage(), e);
+			throw new SerializationException("Error writing to file: " + e.getMessage(), e);
 		}
 	}
+
+	/**
+	 * Deserializes a list of entities from a JSON file.
+	 *
+	 * @param jsonPaths  The paths to the JSON file.
+	 * @param clazz      The class type of entities.
+	 * @param <T>        The type of entities.
+	 * @return           The deserialized list of entities.
+	 */
 	public static <T extends Entity> List<T> deserialization(JsonPaths jsonPaths, Class<T> clazz) {
 		try {
 			Path filePath = Paths.get(jsonPaths.getPath());
@@ -67,7 +88,7 @@ public final class JsonConverter {
 			Type entityType = TypeToken.getParameterized(List.class, clazz).getType();
 			return gson.fromJson(jsonContent, entityType);
 		} catch (IOException e) {
-			throw new DeserializationException("Помилка при читанні з файлу: " + e.getMessage(), e);
+			throw new DeserializationException("Error reading from file: " + e.getMessage(), e);
 		}
 	}
 }

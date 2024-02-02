@@ -13,13 +13,28 @@ import de.codeshelf.consoleui.prompt.builder.PromptBuilder;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The {@code UserView} class represents the view for managing user-related operations.
+ * It provides methods for rendering user-related tasks in the console.
+ * This class implements the {@code Renderable} interface.
+ */
 public class UserView implements Renderable{
+	/**
+	 * Constructs a new {@code UserView} with the specified active user.
+	 *
+	 * @param activeUser The user interacting with the user view.
+	 */
 	private User activeUser;
 
 	public UserView(User activeUser) {
 		this.activeUser = activeUser;
 	}
-
+	/**
+	 * Gets the full name of the user through a console prompt.
+	 *
+	 * @return The full name entered by the user.
+	 * @throws IOException if an I/O error occurs.
+	 */
 	public static String userFullName() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -32,6 +47,12 @@ public class UserView implements Renderable{
 		var userNameInput = (InputResult) result.get("userName");
 		return userNameInput.getInput();
 	}
+	/**
+	 * Gets the UUID of the user through a console prompt.
+	 *
+	 * @return The UUID entered by the user.
+	 * @throws IOException if an I/O error occurs.
+	 */
 	public static String userUUID() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -44,6 +65,12 @@ public class UserView implements Renderable{
 		var userUUIDInput = (InputResult) result.get("userUUID");
 		return userUUIDInput.getInput();
 	}
+	/**
+	 * Gets the user role through a console prompt, allowing the user to select from predefined roles.
+	 *
+	 * @return The selected user role.
+	 * @throws IOException if an I/O error occurs.
+	 */
 	public static String userRole() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -61,8 +88,12 @@ public class UserView implements Renderable{
 		ListResult listResult = (ListResult) result.get("userRole");
 		return listResult.getSelectedId();
 	}
-
-
+	/**
+	 * Gets the user email through a console prompt.
+	 *
+	 * @return The entered user email.
+	 * @throws IOException if an I/O error occurs.
+	 */
 	public static String userEmail() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -75,6 +106,12 @@ public class UserView implements Renderable{
 		InputResult emailInput = (InputResult) result.get("userEmail");
 		return emailInput.getInput();
 	}
+	/**
+	 * Edits the details of the given user based on user input.
+	 *
+	 * @param selectedUser The user to be edited.
+	 * @throws IOException if an I/O error occurs.
+	 */
 	private void editUser(User selectedUser) throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -117,8 +154,12 @@ public class UserView implements Renderable{
 
 		System.out.println("\nОновлений користувач:\n " + selectedUser);
 	}
-
-
+	/**
+	 * Processes the selected option from the user menu.
+	 *
+	 * @param selectedItem The selected option from the user menu.
+	 * @throws IOException if an I/O error occurs.
+	 */
 	private void process(UserMenu selectedItem) throws IOException {
 		switch (selectedItem) {
 			case VIEW_ALL_USER -> {
@@ -188,6 +229,12 @@ public class UserView implements Renderable{
 			}
 		}
 	}
+	/**
+	 * Renders the main menu for user-related operations and processes user input.
+	 * This method uses a console prompt for user interaction.
+	 *
+	 * @throws IOException if an I/O error occurs.
+	 */
 	@Override
 	public void render() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
@@ -212,6 +259,11 @@ public class UserView implements Renderable{
 
 		System.out.print("\033[H\033[2J");
 	}
+
+	/**
+	 * The {@code UserMenu} enum represents the different options in the user menu.
+	 * It includes options for viewing, adding, editing, and searching users.
+	 */
 	enum UserMenu {
 		VIEW_ALL_USER("Перегляд всіх користувачів"),
 		FIND_USER_BY_NAME("Пошук користувача по ніку"),

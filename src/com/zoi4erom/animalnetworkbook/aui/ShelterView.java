@@ -14,14 +14,36 @@ import de.codeshelf.consoleui.prompt.builder.ListPromptBuilder;
 import de.codeshelf.consoleui.prompt.builder.PromptBuilder;
 import java.io.IOException;
 import java.util.List;
-
+/**
+ * The `ShelterView` class provides user interface functionality related to shelters in an animal network book application.
+ * It implements the `Renderable` interface to handle rendering tasks.
+ *
+ * @author Zoi4erom
+ * @since 2024-02-02
+ */
 public class ShelterView implements Renderable{
+	/**
+	 * Constructs a new {@code UserView} with the specified active user.
+	 *
+	 * @param activeUser The user interacting with the user view.
+	 */
 	private User activeUser;
 
+	/**
+	 * Constructs a new `ShelterView` instance with the specified active user.
+	 *
+	 * @param activeUser The active user interacting with the shelter view.
+	 */
 	public ShelterView(User activeUser) {
 		this.activeUser = activeUser;
 	}
 
+	/**
+	 * Prompts the user to input the name of a shelter.
+	 *
+	 * @return The name of the shelter entered by the user.
+	 * @throws IOException If an I/O error occurs during the input process.
+	 */
 	public static String shelterName() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -34,6 +56,12 @@ public class ShelterView implements Renderable{
 		var productNameInput = (InputResult) result.get("shelterName");
 		return productNameInput.getInput();
 	}
+	/**
+	 * Prompts the user to input the phone number of a shelter.
+	 *
+	 * @return The phone number of the shelter entered by the user.
+	 * @throws IOException If an I/O error occurs during the input process.
+	 */
 	public static String shelterPhoneNumber() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -46,6 +74,13 @@ public class ShelterView implements Renderable{
 		var phoneNumberInput = (InputResult) result.get("shelterPhoneNumber");
 		return phoneNumberInput.getInput();
 	}
+	/**
+	 * Prompts the user to input the maximum capacity of animals in the shelter.
+	 * Validates that the input consists only of digits.
+	 *
+	 * @return The maximum capacity of animals entered by the user.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static String shelterCapacityOfAnimals() throws IOException {
 		String input;
 		do {
@@ -67,6 +102,13 @@ public class ShelterView implements Renderable{
 
 		return input;
 	}
+	/**
+	 * Prompts the user to input the address of the shelter.
+	 * Validates that the input is not empty.
+	 *
+	 * @return The address entered by the user.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static String shelterAddress() throws IOException {
 		String input;
 		do {
@@ -89,6 +131,13 @@ public class ShelterView implements Renderable{
 
 		return input;
 	}
+	/**
+	 * Parses the shelter capacity from the input string.
+	 *
+	 * @param input The input string to parse.
+	 * @return The parsed shelter capacity, or 0 if parsing fails.
+	 */
+
 	private static int parseShelterCapacity(String input) {
 		try {
 			if (input.matches("\\d+")) {
@@ -101,6 +150,12 @@ public class ShelterView implements Renderable{
 			return 0;
 		}
 	}
+	/**
+	 * Prompts the user to select a shelter from the list of available shelters.
+	 *
+	 * @return The selected shelter, or null if the selection is canceled or an error occurs.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	public static Shelter selectShelterFromList() throws IOException {
 		List<Shelter> allShelters = ShelterService.getAllShelters();
 
@@ -138,6 +193,13 @@ public class ShelterView implements Renderable{
 		}
 		return null;
 	}
+	/**
+	 * Gets the selected shelter from the list of shelters based on the selectedId.
+	 *
+	 * @param allShelters The list of all shelters.
+	 * @param selectedId  The selected identifier (shelter name in this case).
+	 * @return The selected shelter, or null if not found.
+	 */
 	private static Shelter getSelectedShelter(List<Shelter> allShelters, Object selectedId) {
 		if (selectedId instanceof String) {
 			String selectedShelterName = (String) selectedId;
@@ -148,6 +210,14 @@ public class ShelterView implements Renderable{
 		}
 		return null;
 	}
+	/**
+	 * Allows the user to edit the properties of a selected shelter interactively.
+	 * The user can choose to change the shelter's name, address, phone number, or capacity.
+	 * The editing process continues until the user chooses to finish (option 0).
+	 *
+	 * @param selectedShelter The shelter to be edited.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	private static void editShelter(Shelter selectedShelter) throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -194,6 +264,12 @@ public class ShelterView implements Renderable{
 
 		System.out.println("\nЗмінений притулок:\n " + selectedShelter);
 	}
+	/**
+	 * Processes the selected item from the ShelterMenu.
+	 *
+	 * @param selectedItem The selected item from the ShelterMenu enum.
+	 * @throws IOException If an I/O error occurs.
+	 */
 	private void process(ShelterMenu selectedItem) throws IOException {
 		switch (selectedItem) {
 			case VIEW_ALL_SHELTER -> {
@@ -263,6 +339,12 @@ public class ShelterView implements Renderable{
 			}
 		}
 	}
+	/**
+	 * Renders the main menu for monitoring shelters and processes user input.
+	 * This method uses a console prompt for user interaction.
+	 *
+	 * @throws IOException if an I/O error occurs.
+	 */
 	@Override
 	public void render() throws IOException {
 
@@ -298,6 +380,12 @@ public class ShelterView implements Renderable{
 
 		System.out.print("\033[H\033[2J");
 	}
+	/**
+	 * Renders the search menu for monitoring shelters and processes user input.
+	 * This method uses a console prompt for user interaction.
+	 *
+	 * @throws IOException if an I/O error occurs.
+	 */
 	public void renderSearch() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
@@ -325,6 +413,12 @@ public class ShelterView implements Renderable{
 
 		System.out.print("\033[H\033[2J");
 	}
+	/**
+	 * Processes user input related to shelter search operations based on the selected menu item.
+	 *
+	 * @param selectedItem The selected menu item from the ShelterMenu enum.
+	 * @throws IOException if an I/O error occurs.
+	 */
 	private void processSearch(ShelterMenu selectedItem) throws IOException {
 		switch (selectedItem) {
 			case FIND_BY_SHELTER_BY_NAME -> {
@@ -386,6 +480,10 @@ public class ShelterView implements Renderable{
 			}
 		}
 	}
+	/**
+	 * The {@code ShelterMenu} enum represents the different options in the shelter menu.
+	 * It includes options for viewing, adding, editing, and searching shelters.
+	 */
 	enum ShelterMenu {
 		VIEW_ALL_SHELTER("Перегляд всіх приютів"),
 		FIND_SHELTER("Меню пошуку приюту"),

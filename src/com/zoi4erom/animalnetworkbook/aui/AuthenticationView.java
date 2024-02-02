@@ -6,18 +6,33 @@ import de.codeshelf.consoleui.prompt.ConsolePrompt;
 import de.codeshelf.consoleui.prompt.InputResult;
 import de.codeshelf.consoleui.prompt.builder.PromptBuilder;
 import java.io.IOException;
-
+/**
+ * A view responsible for handling user authentication.
+ */
 public class AuthenticationView {
-
+	/**
+	 * The currently authenticated user.
+	 */
 	private static User activeUser;
-
+	/**
+	 * Gets the currently authenticated user.
+	 *
+	 * @return The currently authenticated user.
+	 */
 	public static User getActiveUser() {
 		return activeUser;
 	}
-
+	/**
+	 * Private constructor to prevent instantiation as this class provides only static methods.
+	 */
 	private AuthenticationView() {
 	}
-
+	/**
+	 * Performs the user authentication process.
+	 *
+	 * @return The authenticated user or null if authentication fails.
+	 * @throws IOException If an I/O error occurs during the input process.
+	 */
 	public static User process() throws IOException {
 		ConsolePrompt prompt = new ConsolePrompt();
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
