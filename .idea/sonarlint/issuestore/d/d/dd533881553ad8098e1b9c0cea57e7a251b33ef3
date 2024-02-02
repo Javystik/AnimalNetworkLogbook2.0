@@ -1,0 +1,9 @@
+
+y	java:S127Y"XRefactor the code in order to not assign to this loop counter from within the loop body.(«Öú‰ùÿÿÿÿ8ûôŸ»Ö1
+h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(íÔM8»¢“»Ö1
+g
+java:S2184_"ECast one of the operands of this subtraction operation to a "double".(ûˆØçøÿÿÿÿ8õŸ»Ö1
+n
+java:S1223J"LRename this method to prevent any misunderstanding or make it a constructor.(çËÊ’ûÿÿÿÿ8‹õŸ»Ö1
+t
+java:S3776J"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(çËÊ’ûÿÿÿÿ8¥øŸ»Ö1

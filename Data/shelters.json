@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Приют радісник",
+    "address": "Радісна",
+    "phone": "+38087545",
+    "numbersOfAnimals": 1,
+    "capacityOfAnimals": 200,
+    "id": "9008dc28-765e-4e0b-94d6-1d9270be20ee"
+  },
+  {
+    "name": "Сумнівка",
+    "address": "Сумна 10",
+    "phone": "+38087655456",
+    "numbersOfAnimals": 0,
+    "capacityOfAnimals": 5,
+    "id": "aa27bdf9-5b20-4b15-b28f-341aadc53dc2"
+  },
+  {
+    "name": "Приют святого Кота",
+    "address": "Котяча 15",
+    "phone": "+38059931525",
+    "numbersOfAnimals": 1,
+    "capacityOfAnimals": 999,
+    "id": "6d0cc43d-3536-4177-b83a-a9a050e98a7c"
+  }
+]

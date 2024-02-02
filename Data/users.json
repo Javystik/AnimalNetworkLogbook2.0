@@ -1,0 +1,22 @@
+[
+  {
+    "fullName": "Тест Тестіровщик",
+    "password": "$2a$10$HNXUs5Y.KhCX9yAvd0sRWO0CkTRPkB1ak1zgIFExaR6iP/2DFPRR6",
+    "phoneNumber": "+380501005484",
+    "homeAddress": "Маковка 10",
+    "email": "tester@gmail.com",
+    "birthdate": "2006-10-20",
+    "role": "ADMIN",
+    "id": "b8921a5b-b4f2-4157-905d-cad905228b22"
+  },
+  {
+    "fullName": "Мірої Владислав Євгенійович",
+    "password": "$2a$10$xZ3i7H2/MR9aMoyKN81WeOKUZ7itIRRBYYhk7O6SMc/JjArVYw98m",
+    "phoneNumber": "+380501005484",
+    "homeAddress": "Ромашкова 10",
+    "email": "vladik.miroi@gmail.com",
+    "birthdate": "2006-10-20",
+    "role": "USER",
+    "id": "3325f5ce-89af-46af-9f75-2cdc1b609494"
+  }
+]

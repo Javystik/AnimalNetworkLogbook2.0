@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Персик",
+    "age": 5,
+    "species": "Собака",
+    "breed": "Домашня",
+    "dateOfDelivery": "2024-02-02",
+    "shelter": {
+      "name": "Приют радісник",
+      "address": "Радісна",
+      "phone": "+38087545",
+      "numbersOfAnimals": 1,
+      "capacityOfAnimals": 200,
+      "id": "9008dc28-765e-4e0b-94d6-1d9270be20ee"
+    },
+    "id": "1239326d-4b78-4235-b06e-a5525e1cf319"
+  },
+  {
+    "name": "Мурзік",
+    "age": 2,
+    "species": "Кіт",
+    "breed": "Вуличний",
+    "dateOfDelivery": "2024-02-02",
+    "shelter": {
+      "name": "Приют святого Кота",
+      "address": "Котяча 15",
+      "phone": "+38059931525",
+      "numbersOfAnimals": 1,
+      "capacityOfAnimals": 999,
+      "id": "6d0cc43d-3536-4177-b83a-a9a050e98a7c"
+    },
+    "id": "66dae5af-161f-4256-92aa-559d6a941c99"
+  }
+]

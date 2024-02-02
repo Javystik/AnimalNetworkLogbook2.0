@@ -1,0 +1,9 @@
+
+o
+java:S6204!"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8Ú‰‘¶Ö1
+Z
+java:S1128"=Remove this unused import 'com.google.gson.JsonDeserializer'.(ÿú±æ8‘¦œ¶Ö1
+g
+java:S1128"JRemove this unused import 'com.zoi4erom.animalnetworkbook.aui.Renderable'.(æÄ²¶8‘¦œ¶Ö1
+x
+java:S1128"VRemove this unused import 'com.zoi4erom.animalnetworkbook.persistence.entity.Shelter'.(÷ÃÕ¬úÿÿÿÿ8’¦œ¶Ö1

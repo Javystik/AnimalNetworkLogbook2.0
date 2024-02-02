@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Хочу забрати кота в добрі руки",
+    "animal": {
+      "name": "Мурзік",
+      "age": 2,
+      "species": "Кіт",
+      "breed": "Вуличний",
+      "dateOfDelivery": "2024-02-02",
+      "shelter": {
+        "name": "Приют святого Кота",
+        "address": "Котяча 15",
+        "phone": "+38059931525",
+        "numbersOfAnimals": 1,
+        "capacityOfAnimals": 999,
+        "id": "6d0cc43d-3536-4177-b83a-a9a050e98a7c"
+      },
+      "id": "66dae5af-161f-4256-92aa-559d6a941c99"
+    },
+    "user": {
+      "fullName": "Тест Тестіровщик",
+      "password": "$2a$10$HNXUs5Y.KhCX9yAvd0sRWO0CkTRPkB1ak1zgIFExaR6iP/2DFPRR6",
+      "phoneNumber": "+380501005484",
+      "homeAddress": "Маковка 10",
+      "email": "tester@gmail.com",
+      "birthdate": "2006-10-20",
+      "role": "ADMIN",
+      "id": "b8921a5b-b4f2-4157-905d-cad905228b22"
+    },
+    "status": "PENDING",
+    "requestCreateDate": "2024-02-02",
+    "id": "52250669-46d5-4ade-a4b0-f2f4db58bdb9"
+  },
+  {
+    "name": "Хочу забрати собачку",
+    "animal": {
+      "name": "Персик",
+      "age": 5,
+      "species": "Собака",
+      "breed": "Домашня",
+      "dateOfDelivery": "2024-02-02",
+      "shelter": {
+        "name": "Приют радісник",
+        "address": "Радісна",
+        "phone": "+38087545",
+        "numbersOfAnimals": 1,
+        "capacityOfAnimals": 200,
+        "id": "9008dc28-765e-4e0b-94d6-1d9270be20ee"
+      },
+      "id": "1239326d-4b78-4235-b06e-a5525e1cf319"
+    },
+    "user": {
+      "fullName": "Тест Тестіровщик",
+      "password": "$2a$10$HNXUs5Y.KhCX9yAvd0sRWO0CkTRPkB1ak1zgIFExaR6iP/2DFPRR6",
+      "phoneNumber": "+380501005484",
+      "homeAddress": "Маковка 10",
+      "email": "tester@gmail.com",
+      "birthdate": "2006-10-20",
+      "role": "ADMIN",
+      "id": "b8921a5b-b4f2-4157-905d-cad905228b22"
+    },
+    "status": "PENDING",
+    "requestCreateDate": "2024-02-02",
+    "id": "76a44d7f-4e81-4a46-b8ef-f9f68a384a06"
+  },
+  {
+    "name": "Я теж собаку хочу",
+    "animal": {
+      "name": "Персик",
+      "age": 5,
+      "species": "Собака",
+      "breed": "Домашня",
+      "dateOfDelivery": "2024-02-02",
+      "shelter": {
+        "name": "Приют радісник",
+        "address": "Радісна",
+        "phone": "+38087545",
+        "numbersOfAnimals": 1,
+        "capacityOfAnimals": 200,
+        "id": "9008dc28-765e-4e0b-94d6-1d9270be20ee"
+      },
+      "id": "1239326d-4b78-4235-b06e-a5525e1cf319"
+    },
+    "user": {
+      "fullName": "Тест Тестіровщик",
+      "password": "$2a$10$HNXUs5Y.KhCX9yAvd0sRWO0CkTRPkB1ak1zgIFExaR6iP/2DFPRR6",
+      "phoneNumber": "+380501005484",
+      "homeAddress": "Маковка 10",
+      "email": "tester@gmail.com",
+      "birthdate": "2006-10-20",
+      "role": "ADMIN",
+      "id": "b8921a5b-b4f2-4157-905d-cad905228b22"
+    },
+    "status": "PENDING",
+    "requestCreateDate": "2024-02-02",
+    "id": "4f2f4d5c-4391-4d2d-808d-9d6352abe612"
+  },
+  {
+    "name": "А я кота",
+    "animal": {
+      "name": "Мурзік",
+      "age": 2,
+      "species": "Кіт",
+      "breed": "Вуличний",
+      "dateOfDelivery": "2024-02-02",
+      "shelter": {
+        "name": "Приют святого Кота",
+        "address": "Котяча 15",
+        "phone": "+38059931525",
+        "numbersOfAnimals": 1,
+        "capacityOfAnimals": 999,
+        "id": "6d0cc43d-3536-4177-b83a-a9a050e98a7c"
+      },
+      "id": "66dae5af-161f-4256-92aa-559d6a941c99"
+    },
+    "user": {
+      "fullName": "Тест Тестіровщик",
+      "password": "$2a$10$HNXUs5Y.KhCX9yAvd0sRWO0CkTRPkB1ak1zgIFExaR6iP/2DFPRR6",
+      "phoneNumber": "+380501005484",
+      "homeAddress": "Маковка 10",
+      "email": "tester@gmail.com",
+      "birthdate": "2006-10-20",
+      "role": "ADMIN",
+      "id": "b8921a5b-b4f2-4157-905d-cad905228b22"
+    },
+    "status": "PENDING",
+    "requestCreateDate": "2024-02-02",
+    "id": "d6d0beea-75f6-4f6c-b154-55b54d3a29e7"
+  }
+]
