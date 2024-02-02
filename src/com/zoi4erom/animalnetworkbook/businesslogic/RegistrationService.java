@@ -85,7 +85,7 @@ public class RegistrationService {
 		if (Boolean.TRUE.equals(verifyCode(verificationCode, inputCode.getInput()))) {
 			createUser(user);
 		} else {
-			System.out.println("Неправильний верифікаційний код!");
+			errors.add("Неправильний верифікаційний код!");
 		}
 
 		return errors;
@@ -243,11 +243,10 @@ public class RegistrationService {
 	 */
 	private static void isValidBirthdate(LocalDate birthdate) {
 		final String FIELD_DATE_OF_BORN = "дати народження";
-		if (Boolean.TRUE.equals(ValidatorServiceUtil.isFieldBlankValidate(String.valueOf(birthdate)))) {
-			errors.add(ExceptionTemplate.EMPTY_FIELD_EXCEPTION.getTemplate()
-			    .formatted(FIELD_DATE_OF_BORN));
+		if (ValidatorServiceUtil.isFieldBlankValidate(String.valueOf(birthdate))) {
+			errors.add("Поле з датою народження, не може бути пусте!");
 		}
-		if (Boolean.TRUE.equals(ValidatorServiceUtil.isValidDate(birthdate))) {
+		if (ValidatorServiceUtil.isValidDate(birthdate)) {
 			errors.add("Дата не може бути в майбутньому.");
 		}
 	}

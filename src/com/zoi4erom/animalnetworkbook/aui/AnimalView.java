@@ -26,7 +26,7 @@ import static java.lang.System.out;
  */
 public class AnimalView implements Renderable {
 
-	private User activeUser;
+	private static User activeUser;
 
 	/**
 	 * Constructor for the AnimalView class.
@@ -48,7 +48,7 @@ public class AnimalView implements Renderable {
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("animalName")
-		    .message("Enter the animal's name: ")
+		    .message("Введіть імя тварини: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
@@ -67,7 +67,7 @@ public class AnimalView implements Renderable {
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("animalSpecies")
-		    .message("Enter the animal's species: ")
+		    .message("Введіть вид тварини: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
@@ -86,7 +86,7 @@ public class AnimalView implements Renderable {
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("animalBreed")
-		    .message("Enter the animal's breed: ")
+		    .message("Введіть породу тварини: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
@@ -105,7 +105,7 @@ public class AnimalView implements Renderable {
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("animalAge")
-		    .message("Enter the animal's age: ")
+		    .message("Введіть вік тварини: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
@@ -407,12 +407,17 @@ public class AnimalView implements Renderable {
 
 			case BACK -> {
 				System.out.print("\033[H\033[2J");
-				User activeUser = AuthenticationView.getActiveUser();
+				User activeUser = AnimalView.getActiveUser();
 				MainMenuView mainMenuView = new MainMenuView(activeUser);
 				mainMenuView.render();
 			}
 		}
 	}
+
+	public static User getActiveUser() {
+		return activeUser;
+	}
+
 	/**
 	 * Processes the selected menu item from the search menu.
 	 *

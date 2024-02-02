@@ -27,7 +27,7 @@ public class ShelterView implements Renderable{
 	 *
 	 * @param activeUser The user interacting with the user view.
 	 */
-	private User activeUser;
+	private static User activeUser;
 
 	/**
 	 * Constructs a new `ShelterView` instance with the specified active user.
@@ -333,12 +333,17 @@ public class ShelterView implements Renderable{
 			}
 			case BACK -> {
 				System.out.print("\033[H\033[2J");
-				User activeUser = AuthenticationView.getActiveUser();
+				User activeUser = ShelterView.getActiveUser();
 				MainMenuView mainMenuView = new MainMenuView(activeUser);
 				mainMenuView.render();
 			}
 		}
 	}
+
+	public static User getActiveUser() {
+		return activeUser;
+	}
+
 	/**
 	 * Renders the main menu for monitoring shelters and processes user input.
 	 * This method uses a console prompt for user interaction.

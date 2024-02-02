@@ -18,11 +18,15 @@ public class Main {
 	 * @throws IOException If an I/O error occurs during file and directory initialization.
 	 */
 	public static void main(String[] args) throws IOException {
-		FileCheckerUtil.checkAndCreateDirectoriesAndFiles();
+		while (true) {
+			System.setProperty("console.encoding", "Cp1251");
 
-		// Display the authentication and registration view
-		AuthenticationAndRegistrationView authenticationAndRegistrationView
-		    = new AuthenticationAndRegistrationView();
-		authenticationAndRegistrationView.render();
+			FileCheckerUtil.checkAndCreateDirectoriesAndFiles();
+
+			// Display the authentication and registration view
+			AuthenticationAndRegistrationView authenticationAndRegistrationView
+			    = new AuthenticationAndRegistrationView();
+			authenticationAndRegistrationView.render();
+		}
 	}
 }

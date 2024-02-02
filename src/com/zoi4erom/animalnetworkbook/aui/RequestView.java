@@ -30,7 +30,7 @@ public class RequestView implements Renderable{
 	 *
 	 * @param activeUser The user interacting with the user view.
 	 */
-	private User activeUser;
+	private static User activeUser;
 	/**
 	 * Constructs a new {@code RequestView} instance with the specified active user.
 	 * The active user is the user currently interacting with the request view.
@@ -452,12 +452,17 @@ public class RequestView implements Renderable{
 			}
 			case BACK -> {
 				System.out.print("\033[H\033[2J");
-				User activeUser = AuthenticationView.getActiveUser();
+				User activeUser = RequestView.getActiveUser();
 				MainMenuView mainMenuView = new MainMenuView(activeUser);
 				mainMenuView.render();
 			}
 		}
 	}
+
+	public static User getActiveUser() {
+		return activeUser;
+	}
+
 	/**
 	 * Displays the main menu for monitoring requests, prompts the user for a selection,
 	 * and processes the chosen action.

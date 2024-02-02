@@ -1,0 +1,7 @@
+com.zoi4erom.animalnetworkbook
+com.zoi4erom.animalnetworkbook.aui
+com.zoi4erom.animalnetworkbook.businesslogic
+com.zoi4erom.animalnetworkbook.businesslogic.exception
+com.zoi4erom.animalnetworkbook.persistence.entity
+com.zoi4erom.animalnetworkbook.persistence.exception
+com.zoi4erom.animalnetworkbook.persistence.jsonhandler

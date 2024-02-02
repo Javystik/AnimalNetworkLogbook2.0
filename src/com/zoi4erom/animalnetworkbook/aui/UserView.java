@@ -24,7 +24,7 @@ public class UserView implements Renderable{
 	 *
 	 * @param activeUser The user interacting with the user view.
 	 */
-	private User activeUser;
+	private static User activeUser;
 
 	public UserView(User activeUser) {
 		this.activeUser = activeUser;
@@ -223,12 +223,17 @@ public class UserView implements Renderable{
 
 			case BACK -> {
 				System.out.print("\033[H\033[2J");
-				User activeUser = AuthenticationView.getActiveUser();
+				User activeUser = UserView.getActiveUser();
 				MainMenuView mainMenuView = new MainMenuView(activeUser);
 				mainMenuView.render();
 			}
 		}
 	}
+
+	public static User getActiveUser() {
+		return activeUser;
+	}
+
 	/**
 	 * Renders the main menu for user-related operations and processes user input.
 	 * This method uses a console prompt for user interaction.
