@@ -49,7 +49,7 @@ public class ShelterView implements Renderable{
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("shelterName")
-		    .message("Впишіть назву приюту: ")
+		    .message("Впишіть назву притулку: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
@@ -67,7 +67,7 @@ public class ShelterView implements Renderable{
 		PromptBuilder promptBuilder = prompt.getPromptBuilder();
 		promptBuilder.createInputPrompt()
 		    .name("shelterPhoneNumber")
-		    .message("Впишіть номер телефону приюту: ")
+		    .message("Впишіть номер телефону притулку: ")
 		    .addPrompt();
 
 		var result = prompt.prompt(promptBuilder.build());
@@ -116,7 +116,7 @@ public class ShelterView implements Renderable{
 			PromptBuilder promptBuilder = prompt.getPromptBuilder();
 			promptBuilder.createInputPrompt()
 			    .name("shelterAddress")
-			    .message("Впишіть адресу приюту: ")
+			    .message("Впишіть адресу притулку: ")
 			    .addPrompt();
 
 			var result = prompt.prompt(promptBuilder.build());
@@ -160,7 +160,7 @@ public class ShelterView implements Renderable{
 		List<Shelter> allShelters = ShelterService.getAllShelters();
 
 		if (allShelters.isEmpty()) {
-			System.out.println("Немає доступних приютів.");
+			System.out.println("Немає доступних притулку.");
 			return null;
 		}
 
@@ -171,7 +171,7 @@ public class ShelterView implements Renderable{
 			ListPromptBuilder listPromptBuilder = promptBuilder.createListPrompt();
 			listPromptBuilder
 			    .name("shelterList")
-			    .message("Виберіть приют за номером:");
+			    .message("Виберіть притулок:");
 
 			for (Shelter shelter : allShelters) {
 				listPromptBuilder.newItem().text(shelter.getName()).add();
@@ -185,7 +185,7 @@ public class ShelterView implements Renderable{
 			if (listResult != null) {
 				return getSelectedShelter(allShelters, listResult.getSelectedId());
 			} else {
-				System.out.println("Вибір приюту скасовано або виникла помилка.");
+				System.out.println("Вибір притулку скасовано або виникла помилка.");
 				return null;
 			}
 		} catch (Exception e) {
@@ -277,12 +277,12 @@ public class ShelterView implements Renderable{
 				List<Shelter> shelters = ShelterService.getAllShelters();
 				if(!shelters.isEmpty()){
 					System.out.print("\033[H\033[2J");
-					out.println("Знайдені приюти: ");
+					out.println("Знайдені притулки: ");
 					for (Shelter shelter: shelters){
 						out.println("-" + shelter);
 					}
 				}else{
-					out.println("В системі не знайдено приютів!");
+					out.println("В системі не знайдено притулку!");
 				}
 				render();
 			}
@@ -294,11 +294,11 @@ public class ShelterView implements Renderable{
 				System.out.print("\033[H\033[2J");
 				List<String> errors = ShelterService.createShelterValidation(shelterName(), shelterAddress(), shelterPhoneNumber(), parseShelterCapacity(shelterCapacityOfAnimals()));
 				if(!errors.isEmpty()){
-					System.out.println("Помилки при створенні приюту:");
+					System.out.println("Помилки при створенні притулку:");
 					errors.forEach(System.out::println);
 				}else{
 					System.out.print("\033[H\033[2J");
-					out.println("Приют успішно створено!");
+					out.println("Притулок успішно створено!");
 				}
 				render();
 			}
@@ -321,12 +321,12 @@ public class ShelterView implements Renderable{
 					boolean isDeleted = ShelterService.deleteShelterByName(shelterName);
 
 					if (isDeleted) {
-						out.println("Приют успішно видалено!");
+						out.println("Притулок успішно видалено!");
 					} else {
-						out.println("Не можна видаляти приют в якому є тварина!");
+						out.println("Не можна видаляти притулку в якому є тварина!");
 					}
 				} else {
-					out.println("В мережі ще немає приютів, які можна було б видалити!");
+					out.println("В мережі ще немає притулків, які можна було б видалити!");
 				}
 
 				render();
@@ -358,7 +358,7 @@ public class ShelterView implements Renderable{
 
 		promptBuilder.createListPrompt()
 		    .name("main-menu")
-		    .message("Моніторинг приютів")
+		    .message("Моніторинг притулків")
 		    .newItem(VIEW_ALL_SHELTER.toString()).text(VIEW_ALL_SHELTER.getName()).add()
 		    .newItem(FIND_SHELTER.toString()).text(FIND_SHELTER.getName()).add()
 		    .newItem(ADD_SHELTER.toString()).text(ADD_SHELTER.getName()).add()
@@ -397,7 +397,7 @@ public class ShelterView implements Renderable{
 
 		promptBuilder.createListPrompt()
 		    .name("search-menu")
-		    .message("Моніторинг пошуку приютів")
+		    .message("Моніторинг пошуку притулків")
 		    .newItem(FIND_BY_SHELTER_BY_NAME.toString()).text(FIND_BY_SHELTER_BY_NAME.getName())
 		    .add()
 		    .newItem(FIND_BY_CAPACITY_OF_ANIMALS.toString()).text(FIND_BY_CAPACITY_OF_ANIMALS.getName())
@@ -431,10 +431,10 @@ public class ShelterView implements Renderable{
 				Shelter shelter = ShelterService.findShelterByName(shelterName);
 
 				if (shelter != null) {
-					out.println("Приют знайдено: " + shelter);
+					out.println("Притулок знайдено: " + shelter);
 				} else {
 					System.out.print("\033[H\033[2J");
-					out.println("Приют по імені: '" + shelterName + "' не знайдено.");
+					out.println("Притулок по імені: '" + shelterName + "' не знайдено.");
 				}
 				renderSearch();
 			}
@@ -447,10 +447,10 @@ public class ShelterView implements Renderable{
 
 					if (shelter != null) {
 						System.out.print("\033[H\033[2J");
-						out.println("Приют знайдено: " + shelter);
+						out.println("Притулок знайдено: " + shelter);
 					} else {
 						System.out.print("\033[H\033[2J");
-						out.println("Приют з даною вмістимостю тварин не знайдено.");
+						out.println("Притулок з даною вмістимостю тварин не знайдено.");
 					}
 				}
 				renderSearch();
@@ -460,10 +460,10 @@ public class ShelterView implements Renderable{
 
 				if (shelter != null) {
 					System.out.print("\033[H\033[2J");
-					out.println("Приют знайдено: " + shelter);
+					out.println("Притулок знайдено: " + shelter);
 				} else {
 					System.out.print("\033[H\033[2J");
-					out.println("Приют по данному номеру телефону не знайдено.");
+					out.println("Притулку по данному номеру телефону не знайдено.");
 				}
 				renderSearch();
 			}
@@ -472,10 +472,10 @@ public class ShelterView implements Renderable{
 
 				if (shelter != null) {
 					System.out.print("\033[H\033[2J");
-					out.println("Приют знайдено: " + shelter);
+					out.println("Притулок знайдено: " + shelter);
 				} else {
 					System.out.print("\033[H\033[2J");
-					out.println("Приют за вказаною адресою не знайдено.");
+					out.println("Притулок за вказаною адресою не знайдено.");
 				}
 				renderSearch();
 			}
@@ -490,11 +490,11 @@ public class ShelterView implements Renderable{
 	 * It includes options for viewing, adding, editing, and searching shelters.
 	 */
 	enum ShelterMenu {
-		VIEW_ALL_SHELTER("Перегляд всіх приютів"),
-		FIND_SHELTER("Меню пошуку приюту"),
-		ADD_SHELTER("Додати приют"),
-		EDD_SHELTER("Редагувати приют"),
-		DELETE_SHELTER_BY_NAME("Видалити приют за ім'ям"),
+		VIEW_ALL_SHELTER("Перегляд всіх притулків"),
+		FIND_SHELTER("Меню пошуку притулків"),
+		ADD_SHELTER("Додати притулків"),
+		EDD_SHELTER("Редагувати притулок"),
+		DELETE_SHELTER_BY_NAME("Видалити притулок за ім'ям"),
 		BACK("Повернутись назад"),
 		FIND_BY_SHELTER_BY_NAME("Пошук за назвою"),
 		FIND_BY_CAPACITY_OF_ANIMALS("Пошук за максимальною кількістю тварин"),

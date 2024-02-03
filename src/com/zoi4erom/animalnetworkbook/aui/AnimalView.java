@@ -122,7 +122,7 @@ public class AnimalView implements Renderable {
 		List<Shelter> allShelters = ShelterService.getAllShelters();
 
 		if (allShelters.isEmpty()) {
-			System.out.println("Немає доступних приютів.");
+			System.out.println("Немає доступних притулку.");
 			return null;
 		}
 
@@ -133,7 +133,7 @@ public class AnimalView implements Renderable {
 			ListPromptBuilder listPromptBuilder = promptBuilder.createListPrompt();
 			listPromptBuilder
 			    .name("shelterList")
-			    .message("Виберіть приют за номером:");
+			    .message("Виберіть притулок за номером:");
 
 			for (Shelter shelter : allShelters) {
 				listPromptBuilder.newItem().text(shelter.getName()).add();
@@ -151,11 +151,11 @@ public class AnimalView implements Renderable {
 				if (selectedShelter != null) {
 					return selectedShelter;
 				} else {
-					System.out.println("Вибір приюту скасовано або виникла помилка.");
+					System.out.println("Вибір притулку скасовано або виникла помилка.");
 					return null;
 				}
 			} else {
-				System.out.println("Вибір приюту скасовано або виникла помилка.");
+				System.out.println("Вибір притулку скасовано або виникла помилка.");
 				return null;
 			}
 		}catch (Exception e){
@@ -218,7 +218,7 @@ public class AnimalView implements Renderable {
 		    .newItem("1").text("Змінити ім'я").add()
 		    .newItem("2").text("Змінити вид").add()
 		    .newItem("3").text("Змінити породу").add()
-		    .newItem("4").text("Змінити приют").add()
+		    .newItem("4").text("Змінити притулок").add()
 		    .newItem("5").text("Змінити вік").add()
 		    .newItem("0").text("Завершити редагування").add()
 		    .addPrompt();
@@ -253,7 +253,7 @@ public class AnimalView implements Renderable {
 
 						newShelter.setNumbersOfAnimals(newShelter.getNumbersOfAnimals() + 1);
 					} else {
-						System.out.println("Помилка: Новий приют не обраний або вже заповнений.");
+						System.out.println("Помилка: Новий притулок не обраний або вже заповнений.");
 					}
 					break;
 
@@ -488,7 +488,7 @@ public class AnimalView implements Renderable {
 					}
 				}else {
 					System.out.print("\033[H\033[2J");
-					out.println("Тварин по даному приюту не знайдено! Можливо в приюті немає тварин!");
+					out.println("Тварин по даному притулку не знайдено! Можливо в притулку немає тварин!");
 				}
 				renderSearch();
 			}
@@ -586,7 +586,7 @@ public class AnimalView implements Renderable {
 		FIND_BY_SPECIES("Пошук за видом тварини"),
 		FIND_BY_BREED("Пошук за породою"),
 		FIND_BY_AGE("Пошук за роками"),
-		FIND_BY_SHELTER("Пошук за приютом");
+		FIND_BY_SHELTER("Пошук за притулком");
 
 		/**
 		 * The display name of the menu option.

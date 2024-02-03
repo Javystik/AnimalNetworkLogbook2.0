@@ -393,7 +393,7 @@ public class RequestView implements Renderable{
 					errors.forEach(System.out::println);
 				}else{
 					System.out.print("\033[H\033[2J");
-					out.println("Приют успішно створено!");
+					out.println("Притулок успішно створено!");
 				}
 				render();
 			}

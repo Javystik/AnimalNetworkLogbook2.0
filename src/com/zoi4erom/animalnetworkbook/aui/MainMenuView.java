@@ -102,7 +102,7 @@ public class MainMenuView implements Renderable {
 	 * Enum representing the main menu options.
 	 */
 	public enum MainMenu {
-		SHELTER("Приюти"),
+		SHELTER("Притулки"),
 		ANIMALS("Тварини"),
 		REQUEST("Запити"),
 		USER("Користувачі"),

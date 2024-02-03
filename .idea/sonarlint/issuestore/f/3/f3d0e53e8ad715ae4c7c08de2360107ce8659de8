@@ -1,26 +1,26 @@
 
 …
-java:S1192å"bDefine a constant instead of duplicating this literal "Ğ—Ğ½Ğ°Ğ¹Ğ´ĞµĞ½Ñ– Ñ‚Ğ²Ğ°Ñ€Ğ¸Ğ½Ğ¸: " 5 times.(É¾Ôûÿÿÿÿ8ƒ­ç²Ö1
+java:S1192å"bDefine a constant instead of duplicating this literal "Ğ—Ğ½Ğ°Ğ¹Ğ´ĞµĞ½Ñ– Ñ‚Ğ²Ğ°Ñ€Ğ¸Ğ½Ğ¸: " 5 times.(É¾Ôûÿÿÿÿ8”µ¶øÖ1
 m
-java:S1192ä"ODefine a constant instead of duplicating this literal "\033[H\033[2J" 20 times.(Îœò—8ª˜±·Ö1
+java:S1192ä"ODefine a constant instead of duplicating this literal "\033[H\033[2J" 20 times.(Îœò—8”µ¶øÖ1
 ²
-java:S1192¸"“Define a constant instead of duplicating this literal "Ğ’Ğ¸Ğ±Ñ–Ñ€ Ñ‚Ğ²Ğ°Ñ€Ğ¸Ğ½Ğ¸ ÑĞºĞ°ÑĞ¾Ğ²Ğ°Ğ½Ğ¾ Ğ°Ğ±Ğ¾ Ğ²Ğ¸Ğ½Ğ¸ĞºĞ»Ğ° Ğ¿Ğ¾Ğ¼Ğ¸Ğ»ĞºĞ°." 3 times.(ğé²Ş8„­ç²Ö1
+java:S1192¸"“Define a constant instead of duplicating this literal "Ğ’Ğ¸Ğ±Ñ–Ñ€ Ñ‚Ğ²Ğ°Ñ€Ğ¸Ğ½Ğ¸ ÑĞºĞ°ÑĞ¾Ğ²Ğ°Ğ½Ğ¾ Ğ°Ğ±Ğ¾ Ğ²Ğ¸Ğ½Ğ¸ĞºĞ»Ğ° Ğ¿Ğ¾Ğ¼Ğ¸Ğ»ĞºĞ°." 3 times.(ğé²Ş8¬µ¶øÖ1
 D
-java:S3010%"'Remove this assignment of "activeUser".(ÏòÂ8Ö¥¡ÍÖ1
+java:S3010%"'Remove this assignment of "activeUser".(ÏòÂ8Å¹¶øÖ1
 R
-java:S2209%"5Change this instance-reference to a static reference.(ÏòÂ8Ö¥¡ÍÖ1
+java:S2209%"5Change this instance-reference to a static reference.(ÏòÂ8Å¹¶øÖ1
 p
-java:S6201®"SReplace this instanceof check and cast with 'instanceof String selectedShelterName'(İè‹:8ı­ç²Ö1
+java:S6201®"SReplace this instanceof check and cast with 'instanceof String selectedShelterName'(İè‹:8İ¹¶øÖ1
 k
-java:S6201´"HReplace this instanceof check and cast with 'instanceof Shelter shelter'(¸ıöËùÿÿÿÿ8ƒ®ç²Ö1
-D	java:S131è""Add a default case to this switch.(­Ö¹§úÿÿÿÿ8éñÙ³Ö1
+java:S6201´"HReplace this instanceof check and cast with 'instanceof Shelter shelter'(¸ıöËùÿÿÿÿ8İ¹¶øÖ1
+D	java:S131è""Add a default case to this switch.(­Ö¹§úÿÿÿÿ8äìô÷Ö1
 p
-java:S3776Ş"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(àœ¡8Ü–¯½Ö1
-v	java:S131ß"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8ß–¯½Ö1
+java:S3776Ş"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(àœ¡8ù¹¶øÖ1
+v	java:S131ß"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8ı¹¶øÖ1
 a
-java:S1117š">Rename "activeUser" which hides the field declared at line 29.(¿ï™Øùÿÿÿÿ8ç–¯½Ö1
+java:S1117š">Rename "activeUser" which hides the field declared at line 29.(¿ï™Øùÿÿÿÿ8Ôº¶øÖ1
 p
-java:S3776«"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(®ß¶8ë–¯½Ö1
-v	java:S131¬"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8î–¯½Ö1
+java:S3776«"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(®ß¶8àìô÷Ö1
+v	java:S131¬"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8åº¶øÖ1
 ä
-java:S6541«"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 74 to 64, Complexity from 16 to 14, Nesting Level from 3 to 2, Number of Variables from 10 to 6.(®ß¶8—¯½Ö1
+java:S6541«"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 74 to 64, Complexity from 16 to 14, Nesting Level from 3 to 2, Number of Variables from 10 to 6.(®ß¶8¶íô÷Ö1

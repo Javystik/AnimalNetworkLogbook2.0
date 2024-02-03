@@ -223,7 +223,7 @@ public class ShelterService {
 			    .formatted(FIELD_NAME, MIN_SIZE, MAX_SIZE));
 		}
 		if (allShelters.stream().anyMatch(shelter -> shelter.getName().equalsIgnoreCase(name))) {
-			errors.add("Приют з таким іменем вже існує.");
+			errors.add("Притулок з таким іменем вже існує.");
 		}
 	}
 

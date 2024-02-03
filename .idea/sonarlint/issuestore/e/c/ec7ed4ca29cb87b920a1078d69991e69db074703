@@ -1,20 +1,20 @@
 
-|
-java:S1192²"^Define a constant instead of duplicating this literal "ĞŸÑ€Ğ¸ÑÑ‚ Ğ·Ğ½Ğ°Ğ¹Ğ´ĞµĞ½Ğ¾: " 4 times.(¤ã³˜8»†ŸÍÖ1
+
+java:S1192²"dDefine a constant instead of duplicating this literal "ĞŸÑ€Ğ¸Ñ‚ÑƒĞ»Ğ¾Ğº Ğ·Ğ½Ğ°Ğ¹Ğ´ĞµĞ½Ğ¾: " 4 times.(ØÚêO8ÅÏÂøÖ1
 m
-java:S1192”"ODefine a constant instead of duplicating this literal "\033[H\033[2J" 17 times.(Îœò—8À†ŸÍÖ1
+java:S1192”"ODefine a constant instead of duplicating this literal "\033[H\033[2J" 17 times.(Îœò—8Ü†µøÖ1
 D
-java:S3010&"'Remove this assignment of "activeUser".(ÏòÂ8¾ŸÍÖ1
+java:S3010&"'Remove this assignment of "activeUser".(ÏòÂ8ïˆµøÖ1
 R
-java:S2209&"5Change this instance-reference to a static reference.(ÏòÂ8¿ŸÍÖ1
+java:S2209&"5Change this instance-reference to a static reference.(ÏòÂ8ğˆµøÖ1
 p
-java:S6201Ì"SReplace this instanceof check and cast with 'instanceof String selectedShelterName'(İè‹:8ö‰ŸÍÖ1
-D	java:S131ò""Add a default case to this switch.(­Ö¹§úÿÿÿÿ8ü‰ŸÍÖ1
+java:S6201Ì"SReplace this instanceof check and cast with 'instanceof String selectedShelterName'(İè‹:8¡‰µøÖ1
+D	java:S131ò""Add a default case to this switch.(­Ö¹§úÿÿÿÿ8©‰µøÖ1
 u
-java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¸ÒãÚşÿÿÿÿ8€ŠŸÍÖ1
-v	java:S131’"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8…ŠŸÍÖ1
+java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¸ÒãÚşÿÿÿÿ8¬‰µøÖ1
+v	java:S131’"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8¯‰µøÖ1
 a
-java:S1117Ğ">Rename "activeUser" which hides the field declared at line 30.(íğ¿ ıÿÿÿÿ8‹ŠŸÍÖ1
+java:S1117Ğ">Rename "activeUser" which hides the field declared at line 30.(íğ¿ ıÿÿÿÿ8·‰µøÖ1
 p
-java:S3776«"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¾¯ú8¥ŠŸÍÖ1
-v	java:S131¬"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8¥ŠŸÍÖ1
+java:S3776«"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¾¯ú8Ì‰µøÖ1
+v	java:S131¬"YComplete cases by adding the missing enum constants or add a default case to this switch.(¢¾§8Î‰µøÖ1
